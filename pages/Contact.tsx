@@ -10,7 +10,7 @@ const Contact: React.FC = () => {
     phone: '',
     date: '',
     guests: '2',
-    message: ''
+    message: '',
   });
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -51,12 +51,14 @@ const Contact: React.FC = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
     // Clear error for this field when user starts typing
     if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: '' }));
+      setErrors((prev) => ({ ...prev, [name]: '' }));
     }
   };
 
@@ -100,9 +102,10 @@ const Contact: React.FC = () => {
             <div>
               <h2 className="font-serif text-3xl font-bold mb-6 text-primary">Informations</h2>
               <p className="text-gray-600 mb-8">
-                Pour toute demande particulière ou privatisation, n'hésitez pas à nous contacter directement par téléphone ou via le formulaire.
+                Pour toute demande particulière ou privatisation, n'hésitez pas à nous contacter
+                directement par téléphone ou via le formulaire.
               </p>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="p-3 bg-secondary rounded-full text-accent">
@@ -149,21 +152,21 @@ const Contact: React.FC = () => {
 
             {/* Google Map (Static fallback for demo) */}
             <div className="w-full h-64 bg-gray-200 rounded-sm overflow-hidden relative">
-               <img 
-                src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?q=80&w=1000&auto=format&fit=crop" 
-                className="w-full h-full object-cover opacity-50" 
-                alt="Map Background" 
-               />
-               <div className="absolute inset-0 flex items-center justify-center">
-                 <a 
-                   href={`https://www.google.com/maps/search/?api=1&query=Saly+Portudal`} 
-                   target="_blank" 
-                   rel="noreferrer"
-                   className="px-6 py-2 bg-white shadow-lg text-primary font-semibold rounded-full hover:scale-105 transition-transform flex items-center gap-2"
-                 >
-                   <MapPin size={16} /> Voir sur Google Maps
-                 </a>
-               </div>
+              <img
+                src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?q=80&w=1000&auto=format&fit=crop"
+                className="w-full h-full object-cover opacity-50"
+                alt="Map Background"
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=Saly+Portudal`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="px-6 py-2 bg-white shadow-lg text-primary font-semibold rounded-full hover:scale-105 transition-transform flex items-center gap-2"
+                >
+                  <MapPin size={16} /> Voir sur Google Maps
+                </a>
+              </div>
             </div>
           </div>
 

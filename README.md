@@ -18,6 +18,7 @@
 ## 📋 À Propos
 
 **Le Baobab** est un restaurant gastronomique situé à Saly, Sénégal, spécialisé dans :
+
 - 🦞 Fruits de mer frais pêchés localement
 - 🔥 Grillades au feu de bois
 - 🇸🇳 Cuisine sénégalaise authentique
@@ -29,6 +30,7 @@ Ce projet est un site web moderne et performant développé avec React, TypeScri
 ## ✨ Fonctionnalités
 
 ### Actuellement Disponibles
+
 - ✅ Navigation fluide et responsive
 - ✅ Menu interactif avec filtres par catégorie
 - ✅ Formulaire de réservation
@@ -37,6 +39,7 @@ Ce projet est un site web moderne et performant développé avec React, TypeScri
 - ✅ Design mobile-first
 
 ### En Cours de Développement
+
 - 🔄 Backend API Node.js/Express
 - 🔄 Base de données PostgreSQL
 - 🔄 Envoi d'emails automatique
@@ -136,6 +139,7 @@ npm run test:coverage    # Rapport de couverture
 ## 🎨 Stack Technique
 
 ### Frontend
+
 - **React 19** - Framework UI
 - **TypeScript 5.8** - Typage statique
 - **Vite 6.2** - Build tool ultra-rapide
@@ -144,6 +148,7 @@ npm run test:coverage    # Rapport de couverture
 - **Lucide React** - Icônes
 
 ### Backend (En développement)
+
 - **Node.js 20** + **Express.js** - API REST
 - **PostgreSQL 16** + **Prisma ORM** - Base de données
 - **Zod** - Validation schémas
@@ -151,6 +156,7 @@ npm run test:coverage    # Rapport de couverture
 - **JWT** - Authentication
 
 ### DevOps
+
 - **Vitest** - Tests unitaires
 - **ESLint** + **Prettier** - Code quality
 - **Husky** - Pre-commit hooks
@@ -164,11 +170,11 @@ npm run test:coverage    # Rapport de couverture
 
 ### Guides Disponibles
 
-| Document | Description | Temps |
-|----------|-------------|-------|
-| [QUICK_START.md](./QUICK_START.md) | Démarrage rapide en 30 min | 30 min |
-| [ROADMAP_PROFESSIONNELLE.md](./ROADMAP_PROFESSIONNELLE.md) | Guide complet de transformation | - |
-| [PROGRESSION_CHECKLIST.md](./PROGRESSION_CHECKLIST.md) | Checklist de suivi | - |
+| Document                                                   | Description                     | Temps  |
+| ---------------------------------------------------------- | ------------------------------- | ------ |
+| [QUICK_START.md](./QUICK_START.md)                         | Démarrage rapide en 30 min      | 30 min |
+| [ROADMAP_PROFESSIONNELLE.md](./ROADMAP_PROFESSIONNELLE.md) | Guide complet de transformation | -      |
+| [PROGRESSION_CHECKLIST.md](./PROGRESSION_CHECKLIST.md)     | Checklist de suivi              | -      |
 
 ### Pour Commencer
 
@@ -181,6 +187,7 @@ npm run test:coverage    # Rapport de couverture
 ## 🗺️ Roadmap
 
 ### Phase 1: Fondations ✅ (En cours)
+
 - [x] Configuration Tailwind local
 - [x] Migration BrowserRouter
 - [ ] Structure fichiers optimisée
@@ -188,18 +195,21 @@ npm run test:coverage    # Rapport de couverture
 - [ ] TypeScript strict mode
 
 ### Phase 2: Backend 🔄 (À venir)
+
 - [ ] API Node.js/Express
 - [ ] Base de données PostgreSQL
 - [ ] Système de réservation
 - [ ] Envoi d'emails
 
 ### Phase 3: Production 📅 (Planifié)
+
 - [ ] SEO complet
 - [ ] Tests automatisés
 - [ ] Optimisation performance
 - [ ] Pages About & Gallery
 
 ### Phase 4: Features Avancées 🚀 (Futur)
+
 - [ ] Panel administration
 - [ ] Paiement en ligne
 - [ ] Multilingue (i18n)
@@ -212,11 +222,13 @@ npm run test:coverage    # Rapport de couverture
 ### Variables d'Environnement
 
 **Frontend (.env.local):**
+
 ```env
 VITE_API_URL=http://localhost:5000/api
 ```
 
 **Backend (.env):**
+
 ```env
 DATABASE_URL=postgresql://user:password@localhost:5432/lebaobab
 PORT=5000
@@ -307,6 +319,7 @@ Ce projet est privé et propriétaire.
 ## 📞 Contact
 
 **Le Baobab Restaurant**
+
 - 📍 Route de la Plage, Saly Portudal, Mbour, Sénégal
 - 📞 +221 77 000 00 00
 - 📧 contact@lebaobab-saly.com

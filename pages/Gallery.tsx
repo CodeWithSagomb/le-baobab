@@ -6,7 +6,7 @@ import { useScrollAnimation } from '../src/hooks/useScrollAnimation';
 type GalleryCategory = 'Food' | 'Place' | 'Ambiance' | 'All';
 
 const Gallery: React.FC = () => {
-  const [selectedImage, setSelectedImage] = useState<typeof GALLERY_IMAGES[0] | null>(null);
+  const [selectedImage, setSelectedImage] = useState<(typeof GALLERY_IMAGES)[0] | null>(null);
   const [activeCategory, setActiveCategory] = useState<GalleryCategory>('All');
 
   // Animations
@@ -111,8 +111,8 @@ const Gallery: React.FC = () => {
           <Camera className="mx-auto text-accent mb-3" size={32} />
           <p className="text-gray-600 italic text-sm leading-relaxed">
             Toutes nos photos sont prises sur place et reflètent l'authenticité de notre
-            établissement. L'ambiance, les plats et le cadre sont fidèles à ce que vous
-            découvrirez lors de votre visite.
+            établissement. L'ambiance, les plats et le cadre sont fidèles à ce que vous découvrirez
+            lors de votre visite.
           </p>
         </div>
       </div>
@@ -148,9 +148,7 @@ const Gallery: React.FC = () => {
                 <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-2">
                   {selectedImage.category}
                 </p>
-                <h2 className="text-white font-serif text-3xl md:text-4xl">
-                  {selectedImage.alt}
-                </h2>
+                <h2 className="text-white font-serif text-3xl md:text-4xl">{selectedImage.alt}</h2>
               </div>
             </div>
           </div>

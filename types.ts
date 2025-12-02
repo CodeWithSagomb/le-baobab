@@ -9,13 +9,13 @@ export interface MenuItem {
 }
 
 export enum MenuCategory {
-  ENTREES = "Entrées",
-  PLATS_SENEGALAIS = "Plats Sénégalais",
-  FRUITS_DE_MER = "Fruits de Mer",
-  GRILLADES = "Grillades & BBQ",
-  POISSONS = "Poissons",
-  DESSERTS = "Desserts",
-  BOISSONS = "Boissons",
+  ENTREES = 'Entrées',
+  PLATS_SENEGALAIS = 'Plats Sénégalais',
+  FRUITS_DE_MER = 'Fruits de Mer',
+  GRILLADES = 'Grillades & BBQ',
+  POISSONS = 'Poissons',
+  DESSERTS = 'Desserts',
+  BOISSONS = 'Boissons',
 }
 
 export interface Review {

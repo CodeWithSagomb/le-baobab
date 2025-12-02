@@ -16,6 +16,7 @@
 ## PHASE 1: FONDATIONS TECHNIQUES (7-10 jours)
 
 ### 1.1 Configuration Tailwind CSS Local
+
 - [ ] Installer Tailwind CSS (`npm install -D tailwindcss postcss autoprefixer`)
 - [ ] Exécuter `npx tailwindcss init -p`
 - [ ] Créer `tailwind.config.js` avec configuration complète
@@ -30,6 +31,7 @@
 ---
 
 ### 1.2 Migration BrowserRouter
+
 - [ ] Remplacer `HashRouter` par `BrowserRouter` dans App.tsx
 - [ ] Mettre à jour config Vite (build.rollupOptions)
 - [ ] Créer `public/_redirects` pour SPA routing
@@ -42,6 +44,7 @@
 ---
 
 ### 1.3 Réorganisation Structure Fichiers
+
 - [ ] Créer dossiers: `src/components/{common,layout,features}`
 - [ ] Créer dossiers: `src/{hooks,contexts,services,utils,types,assets,styles}`
 - [ ] Créer dossier: `tests/{unit,e2e}`
@@ -56,6 +59,7 @@
 ---
 
 ### 1.4 ESLint + Prettier
+
 - [ ] Installer ESLint + Prettier (`npm install -D eslint prettier ...`)
 - [ ] Créer `.eslintrc.json`
 - [ ] Créer `.prettierrc`
@@ -69,6 +73,7 @@
 ---
 
 ### 1.5 TypeScript Strict Mode
+
 - [ ] Activer `"strict": true` dans tsconfig.json
 - [ ] Activer `noUnusedLocals`, `noUnusedParameters`
 - [ ] Activer `noImplicitReturns`, `strictNullChecks`
@@ -81,6 +86,7 @@
 ---
 
 ### 1.6 Git Configuration
+
 - [ ] Créer/Mettre à jour `.gitignore` (node_modules, .env, dist, .venv)
 - [ ] Supprimer `.venv` du repo: `git rm -r --cached .venv`
 - [ ] Initialiser git si nécessaire: `git init`
@@ -92,6 +98,7 @@
 ---
 
 ### 1.7 Husky + lint-staged
+
 - [ ] Installer: `npm install -D husky lint-staged`
 - [ ] Initialiser: `npx husky init`
 - [ ] Créer `.husky/pre-commit`
@@ -103,6 +110,7 @@
 ---
 
 ### 1.8 Nettoyage Python
+
 - [ ] Supprimer dossier `.venv` complètement
 - [ ] Supprimer références GEMINI_API_KEY dans vite.config.ts
 - [ ] Ajouter `.venv` dans .gitignore
@@ -113,6 +121,7 @@
 ---
 
 ### ✅ VALIDATION PHASE 1
+
 - [ ] `npm run build` → succès
 - [ ] `npm run lint` → 0 warnings
 - [ ] `npm run dev` → application fonctionne
@@ -120,13 +129,14 @@
 - [ ] Code formaté automatiquement au commit
 - [ ] Aucun fichier Python dans le projet
 
-**Date de fin Phase 1:** _____________
+**Date de fin Phase 1:** ******\_******
 
 ---
 
 ## PHASE 2: BACKEND & API (12-15 jours)
 
 ### 2.1 Setup Backend
+
 - [ ] Créer dossier `backend/`
 - [ ] Initialiser: `cd backend && npm init -y`
 - [ ] Installer Express + TypeScript + dépendances
@@ -141,6 +151,7 @@
 ---
 
 ### 2.2 PostgreSQL + Prisma
+
 - [ ] Installer Docker Desktop (si pas déjà fait)
 - [ ] Créer `docker-compose.yml` (PostgreSQL + Redis)
 - [ ] Démarrer: `docker-compose up -d`
@@ -156,6 +167,7 @@
 ---
 
 ### 2.3 API Réservation
+
 - [ ] Créer `services/email.service.ts`
 - [ ] Créer `controllers/reservation.controller.ts`
 - [ ] Créer `routes/reservation.routes.ts`
@@ -169,6 +181,7 @@
 ---
 
 ### 2.4 Service Email (SendGrid/Nodemailer)
+
 - [ ] Créer compte SendGrid
 - [ ] Récupérer API Key
 - [ ] Configurer transporter Nodemailer
@@ -182,6 +195,7 @@
 ---
 
 ### 2.5 Middleware & Sécurité
+
 - [ ] Installer Helmet, CORS, rate-limit
 - [ ] Configurer Helmet
 - [ ] Configurer CORS (origins autorisés)
@@ -195,6 +209,7 @@
 ---
 
 ### 2.6 Intégration Frontend → Backend
+
 - [ ] Créer `src/services/api.ts` (frontend)
 - [ ] Configurer axios avec baseURL
 - [ ] Créer fonction `createReservation()`
@@ -209,6 +224,7 @@
 ---
 
 ### 2.7 Variables d'Environnement
+
 - [ ] Créer `.env.example` (backend)
 - [ ] Créer `.env.example` (frontend)
 - [ ] Documenter toutes les variables nécessaires
@@ -220,6 +236,7 @@
 ---
 
 ### ✅ VALIDATION PHASE 2
+
 - [ ] Backend démarre sans erreurs
 - [ ] Base de données accessible
 - [ ] API POST /reservations fonctionne
@@ -229,13 +246,14 @@
 - [ ] Rate limiting actif
 - [ ] Tests Postman/Thunder Client validés
 
-**Date de fin Phase 2:** _____________
+**Date de fin Phase 2:** ******\_******
 
 ---
 
 ## PHASE 3: PRODUCTION READY (8-10 jours)
 
 ### 3.1 Pages Manquantes
+
 - [ ] Implémenter `About.tsx` complètement
 - [ ] Implémenter `Gallery.tsx` avec lightbox
 - [ ] Tester responsive mobile/desktop
@@ -246,6 +264,7 @@
 ---
 
 ### 3.2 SEO
+
 - [ ] Installer: `npm install react-helmet-async`
 - [ ] Wrapper App avec `<HelmetProvider>`
 - [ ] Créer composant `SEO.tsx`
@@ -259,6 +278,7 @@
 ---
 
 ### 3.3 Optimisation Images
+
 - [ ] Installer: `npm install vite-plugin-image-optimizer`
 - [ ] Configurer plugin dans vite.config.ts
 - [ ] Remplacer images Unsplash par vraies photos (si disponibles)
@@ -270,6 +290,7 @@
 ---
 
 ### 3.4 Tests
+
 - [ ] Installer Vitest + Testing Library
 - [ ] Créer `vitest.config.ts`
 - [ ] Créer `tests/setup.ts`
@@ -282,6 +303,7 @@
 ---
 
 ### 3.5 Performance
+
 - [ ] Lazy loading routes (React.lazy)
 - [ ] Code splitting (dynamic imports)
 - [ ] Preload fonts
@@ -293,6 +315,7 @@
 ---
 
 ### 3.6 Accessibilité (a11y)
+
 - [ ] Ajouter `aria-label` sur boutons icônes
 - [ ] Ajouter `alt` sur toutes images
 - [ ] Tester navigation clavier (Tab)
@@ -304,6 +327,7 @@
 ---
 
 ### 3.7 Error Boundaries
+
 - [ ] Créer composant `ErrorBoundary.tsx`
 - [ ] Wrapper routes avec ErrorBoundary
 - [ ] Page 404 personnalisée
@@ -314,6 +338,7 @@
 ---
 
 ### ✅ VALIDATION PHASE 3
+
 - [ ] Toutes les pages complètes
 - [ ] SEO configuré (score Lighthouse >90)
 - [ ] Images optimisées
@@ -323,13 +348,14 @@
 - [ ] Application accessible au clavier
 - [ ] Build production <500KB (initial bundle)
 
-**Date de fin Phase 3:** _____________
+**Date de fin Phase 3:** ******\_******
 
 ---
 
 ## PHASE 4: DÉPLOIEMENT (2-3 jours)
 
 ### 4.1 Préparation Déploiement
+
 - [ ] Build frontend: `npm run build`
 - [ ] Build backend: `npm run build`
 - [ ] Tester build localement: `npm run preview`
@@ -341,6 +367,7 @@
 ---
 
 ### 4.2 Déploiement Frontend (Vercel)
+
 - [ ] Créer compte Vercel
 - [ ] Connecter repo GitHub
 - [ ] Configurer variables d'environnement
@@ -353,6 +380,7 @@
 ---
 
 ### 4.3 Déploiement Backend (Railway/Render)
+
 - [ ] Créer compte Railway/Render
 - [ ] Connecter repo GitHub
 - [ ] Configurer PostgreSQL cloud
@@ -365,6 +393,7 @@
 ---
 
 ### 4.4 Configuration Domaine (Optionnel)
+
 - [ ] Acheter domaine (ex: lebaobab.com)
 - [ ] Configurer DNS vers Vercel
 - [ ] Activer HTTPS/SSL
@@ -375,6 +404,7 @@
 ---
 
 ### 4.5 Monitoring
+
 - [ ] Configurer Sentry (error tracking)
 - [ ] Configurer Google Analytics / Plausible
 - [ ] Configurer UptimeRobot (monitoring uptime)
@@ -385,6 +415,7 @@
 ---
 
 ### ✅ VALIDATION DÉPLOIEMENT
+
 - [ ] Frontend déployé et accessible
 - [ ] Backend déployé et fonctionnel
 - [ ] Base de données production active
@@ -394,13 +425,14 @@
 - [ ] Monitoring actif
 - [ ] Lighthouse score production >90
 
-**Date de déploiement:** _____________
+**Date de déploiement:** ******\_******
 
 ---
 
 ## PHASE 5: FEATURES AVANCÉES (15-20 jours)
 
 ### 5.1 Panel Admin
+
 - [ ] Créer dashboard admin
 - [ ] Authentication JWT
 - [ ] CRUD réservations
@@ -412,6 +444,7 @@
 ---
 
 ### 5.2 Paiement en Ligne
+
 - [ ] Intégrer Stripe ou Wave
 - [ ] Page checkout
 - [ ] Webhooks paiement
@@ -422,6 +455,7 @@
 ---
 
 ### 5.3 Multilingue (i18n)
+
 - [ ] Installer react-i18next
 - [ ] Traductions FR/EN
 - [ ] Sélecteur langue
@@ -432,6 +466,7 @@
 ---
 
 ### 5.4 PWA
+
 - [ ] Installer vite-plugin-pwa
 - [ ] Configurer service worker
 - [ ] Manifest.json
@@ -442,6 +477,7 @@
 ---
 
 ### 5.5 Notifications Push
+
 - [ ] Backend: Firebase Cloud Messaging
 - [ ] Frontend: Permission notifications
 - [ ] Envoyer notif nouvelle réservation
@@ -452,80 +488,82 @@
 ---
 
 ### ✅ VALIDATION PHASE 5
+
 - [ ] Panel admin fonctionnel
 - [ ] Paiements acceptés
 - [ ] Application multilingue
 - [ ] PWA installable
 - [ ] Notifications push actives
 
-**Date de fin Phase 5:** _____________
+**Date de fin Phase 5:** ******\_******
 
 ---
 
 ## 📊 MÉTRIQUES DE SUCCÈS
 
 ### Performance
-- [ ] Lighthouse Performance: **Score actuel: ___/100** | Cible: >90
-- [ ] First Contentful Paint: **___ ms** | Cible: <1.8s
-- [ ] Time to Interactive: **___ ms** | Cible: <3.8s
-- [ ] Bundle size (initial): **___ KB** | Cible: <500KB
+
+- [ ] Lighthouse Performance: **Score actuel: \_\_\_/100** | Cible: >90
+- [ ] First Contentful Paint: **\_\_\_ ms** | Cible: <1.8s
+- [ ] Time to Interactive: **\_\_\_ ms** | Cible: <3.8s
+- [ ] Bundle size (initial): **\_\_\_ KB** | Cible: <500KB
 
 ### SEO
-- [ ] Lighthouse SEO: **Score actuel: ___/100** | Cible: >95
+
+- [ ] Lighthouse SEO: **Score actuel: \_\_\_/100** | Cible: >95
 - [ ] Meta tags: ✅ / ❌
 - [ ] Sitemap: ✅ / ❌
 - [ ] Robots.txt: ✅ / ❌
 
 ### Accessibilité
-- [ ] Lighthouse Accessibility: **Score actuel: ___/100** | Cible: >90
+
+- [ ] Lighthouse Accessibility: **Score actuel: \_\_\_/100** | Cible: >90
 - [ ] Navigation clavier: ✅ / ❌
 - [ ] Lecteurs d'écran: ✅ / ❌
 
 ### Qualité Code
-- [ ] Tests coverage: **____%** | Cible: >80%
-- [ ] ESLint warnings: **___** | Cible: 0
-- [ ] TypeScript errors: **___** | Cible: 0
+
+- [ ] Tests coverage: **\_\_\_\_%** | Cible: >80%
+- [ ] ESLint warnings: **\_\_\_** | Cible: 0
+- [ ] TypeScript errors: **\_\_\_** | Cible: 0
 
 ---
 
 ## 🎯 NOTES & BLOCAGES
 
 ### Phase 1
-**Blocages:**
--
 
-**Notes:**
--
+## **Blocages:**
+
+## **Notes:**
 
 ---
 
 ### Phase 2
-**Blocages:**
--
 
-**Notes:**
--
+## **Blocages:**
+
+## **Notes:**
 
 ---
 
 ### Phase 3
-**Blocages:**
--
 
-**Notes:**
--
+## **Blocages:**
+
+## **Notes:**
 
 ---
 
 ## 📅 PLANNING PRÉVISIONNEL
 
-| Phase | Début | Fin | Durée | Statut |
-|-------|-------|-----|-------|--------|
-| Phase 1: Fondations | __/__/__ | __/__/__ | 7-10j | ⏳ |
-| Phase 2: Backend | __/__/__ | __/__/__ | 12-15j | ⏳ |
-| Phase 3: Production | __/__/__ | __/__/__ | 8-10j | ⏳ |
-| Phase 4: Déploiement | __/__/__ | __/__/__ | 2-3j | ⏳ |
-| Phase 5: Features+ | __/__/__ | __/__/__ | 15-20j | ⏳ |
+| Phase                | Début      | Fin        | Durée  | Statut |
+| -------------------- | ---------- | ---------- | ------ | ------ |
+| Phase 1: Fondations  | **/**/\_\_ | **/**/\_\_ | 7-10j  | ⏳     |
+| Phase 2: Backend     | **/**/\_\_ | **/**/\_\_ | 12-15j | ⏳     |
+| Phase 3: Production  | **/**/\_\_ | **/**/\_\_ | 8-10j  | ⏳     |
+| Phase 4: Déploiement | **/**/\_\_ | **/**/\_\_ | 2-3j   | ⏳     |
+| Phase 5: Features+   | **/**/\_\_ | **/**/\_\_ | 15-20j | ⏳     |
 
 **Total estimé:** 44-58 jours (~ 8-10 semaines)
 
@@ -567,6 +605,7 @@ git push                 # Push vers remote
 **Avant de mettre en ligne:**
 
 ### Sécurité
+
 - [ ] Toutes les variables sensibles en .env
 - [ ] Pas de console.log en production
 - [ ] HTTPS actif
@@ -575,12 +614,14 @@ git push                 # Push vers remote
 - [ ] Headers sécurisés (Helmet)
 
 ### Performance
+
 - [ ] Images optimisées
 - [ ] Code splitting actif
 - [ ] Lighthouse >90
 - [ ] Compression Gzip/Brotli
 
 ### Fonctionnel
+
 - [ ] Tous les formulaires testés
 - [ ] Emails envoyés correctement
 - [ ] Réservations enregistrées
@@ -588,6 +629,7 @@ git push                 # Push vers remote
 - [ ] Mobile responsive
 
 ### Contenu
+
 - [ ] Textes relus (0 fautes)
 - [ ] Images remplacées par vraies photos
 - [ ] Liens sociaux fonctionnels

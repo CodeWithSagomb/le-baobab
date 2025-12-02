@@ -50,13 +50,14 @@ npx tailwindcss init -p
 ```
 
 **Créer `tailwind.config.js`:**
+
 ```javascript
 export default {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
@@ -73,10 +74,11 @@ export default {
     },
   },
   plugins: [],
-}
+};
 ```
 
 **Créer `src/index.css`:**
+
 ```css
 @tailwind base;
 @tailwind components;
@@ -90,18 +92,23 @@ export default {
 ```
 
 **Modifier `index.html` - SUPPRIMER:**
+
 ```html
 <!-- SUPPRIMER CES LIGNES -->
 <script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config = {...}</script>
+<script>
+  tailwind.config = {...}
+</script>
 ```
 
 **Modifier `index.tsx` - AJOUTER:**
+
 ```typescript
 import './index.css'; // ← Ajouter cette ligne en haut
 ```
 
 **Tester:**
+
 ```bash
 npm run dev
 # Ouvrir http://localhost:3000
@@ -115,6 +122,7 @@ npm run dev
 ### ÉTAPE 3: BrowserRouter (5 min)
 
 **Modifier `App.tsx` - Ligne 2:**
+
 ```typescript
 // AVANT:
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
@@ -124,11 +132,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 ```
 
 **Créer `public/_redirects`:**
+
 ```
 /*    /index.html   200
 ```
 
 **Tester:**
+
 ```bash
 npm run dev
 # Les URLs doivent être /menu au lieu de /#/menu
@@ -146,6 +156,7 @@ npm install -D eslint@latest prettier@latest eslint-config-prettier@latest @type
 ```
 
 **Créer `.eslintrc.json`:**
+
 ```json
 {
   "root": true,
@@ -171,6 +182,7 @@ npm install -D eslint@latest prettier@latest eslint-config-prettier@latest @type
 ```
 
 **Créer `.prettierrc`:**
+
 ```json
 {
   "semi": true,
@@ -181,6 +193,7 @@ npm install -D eslint@latest prettier@latest eslint-config-prettier@latest @type
 ```
 
 **Ajouter dans `package.json`:**
+
 ```json
 {
   "scripts": {
@@ -192,6 +205,7 @@ npm install -D eslint@latest prettier@latest eslint-config-prettier@latest @type
 ```
 
 **Tester:**
+
 ```bash
 npm run lint:fix
 npm run format
@@ -204,6 +218,7 @@ npm run format
 ### ÉTAPE 5: Git Configuration (5 min)
 
 **Créer/Mettre à jour `.gitignore`:**
+
 ```gitignore
 # Dependencies
 node_modules/
@@ -239,6 +254,7 @@ coverage/
 ```
 
 **Commit initial:**
+
 ```bash
 git add .
 git commit -m "chore: initial setup - phase 1 foundations"
@@ -278,6 +294,7 @@ Vous venez de compléter **30% de la Phase 1** !
 ### Suite immédiate (optionnel - 1h de plus)
 
 **Réorganiser la structure:**
+
 ```bash
 # Créer nouveaux dossiers
 mkdir -p src/components/common src/components/layout src/components/features
@@ -291,6 +308,7 @@ mkdir -p tests/unit tests/e2e
 ```
 
 **Activer TypeScript Strict dans `tsconfig.json`:**
+
 ```json
 {
   "compilerOptions": {
@@ -315,6 +333,7 @@ Pour la suite détaillée:
 ## 🆘 PROBLÈMES COURANTS
 
 ### "npm install" échoue
+
 ```bash
 # Nettoyer et réinstaller
 rm -rf node_modules package-lock.json
@@ -322,6 +341,7 @@ npm install
 ```
 
 ### "npm run build" échoue
+
 ```bash
 # Vérifier TypeScript
 npm run build 2>&1 | grep error
@@ -329,6 +349,7 @@ npm run build 2>&1 | grep error
 ```
 
 ### Design cassé après Tailwind local
+
 ```bash
 # Vérifier que index.css est importé
 # Vérifier que tailwind.config.js existe
@@ -336,6 +357,7 @@ npm run build 2>&1 | grep error
 ```
 
 ### Erreurs ESLint
+
 ```bash
 # Auto-fix
 npm run lint:fix
@@ -348,6 +370,7 @@ npm run lint:fix
 Vous avez complété le Quick Start en 30 minutes !
 
 **Ce que vous avez accompli:**
+
 - ✅ Tailwind CSS optimisé (bundle réduit de 3MB → 50KB)
 - ✅ URLs propres pour le SEO
 - ✅ Code quality tools (ESLint + Prettier)
@@ -361,6 +384,7 @@ Vous avez complété le Quick Start en 30 minutes !
 ## 📞 AIDE
 
 **Blocage?** Consultez:
+
 - `ROADMAP_PROFESSIONNELLE.md` - Documentation détaillée
 - `PROGRESSION_CHECKLIST.md` - Checklist de suivi
 

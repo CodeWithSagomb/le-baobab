@@ -42,9 +42,9 @@ const About: React.FC = () => {
             </h2>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              Fondé il y a plus de 10 ans, <strong>Le Baobab</strong> est né d'une passion
-              simple : celle de partager la richesse des produits sénégalais dans un cadre qui
-              respire l'élégance décontractée de la Petite Côte.
+              Fondé il y a plus de 10 ans, <strong>Le Baobab</strong> est né d'une passion simple :
+              celle de partager la richesse des produits sénégalais dans un cadre qui respire
+              l'élégance décontractée de la Petite Côte.
             </p>
 
             <p className="text-lg text-gray-600 leading-relaxed">
@@ -78,9 +78,8 @@ const About: React.FC = () => {
           <div className="md:col-span-8 md:col-start-3 text-center md:text-left">
             <p className="text-lg text-gray-600 leading-relaxed">
               Le nom "Le Baobab" n'a pas été choisi au hasard. Symbole de longévité et de
-              rassemblement en Afrique, il incarne l'esprit de notre établissement : un lieu où
-              l'on se retrouve en famille, entre amis ou en amoureux, pour prendre le temps de
-              vivre.
+              rassemblement en Afrique, il incarne l'esprit de notre établissement : un lieu où l'on
+              se retrouve en famille, entre amis ou en amoureux, pour prendre le temps de vivre.
             </p>
           </div>
         </div>

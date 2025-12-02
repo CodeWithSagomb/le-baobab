@@ -60,10 +60,7 @@ const Menu: React.FC = () => {
         {/* Barre de Recherche */}
         <div className="max-w-2xl mx-auto mb-8">
           <div className="relative">
-            <Search
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
-              size={20}
-            />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
             <input
               type="text"
               placeholder="Rechercher un plat (ex: Thiéboudienne, poulet, langouste...)"
@@ -194,9 +191,7 @@ const Menu: React.FC = () => {
           // Aucun résultat
           <div className="text-center py-20">
             <ChefHat className="mx-auto text-gray-300 mb-4" size={80} />
-            <h3 className="text-2xl font-serif font-bold text-gray-400 mb-2">
-              Aucun plat trouvé
-            </h3>
+            <h3 className="text-2xl font-serif font-bold text-gray-400 mb-2">Aucun plat trouvé</h3>
             <p className="text-gray-500 mb-6">
               Essayez avec d'autres mots-clés ou changez de catégorie
             </p>
@@ -215,9 +210,9 @@ const Menu: React.FC = () => {
         {/* Note informative */}
         <div className="text-center mt-16 p-8 bg-white border border-gray-100 shadow-sm max-w-3xl mx-auto rounded-lg">
           <p className="text-gray-600 italic text-sm leading-relaxed">
-            * Nos plats sont préparés à la commande pour garantir une fraîcheur optimale. Les
-            prix sont indiqués en Francs CFA. Taxes et service compris. Veuillez nous informer de
-            toute allergie alimentaire.
+            * Nos plats sont préparés à la commande pour garantir une fraîcheur optimale. Les prix
+            sont indiqués en Francs CFA. Taxes et service compris. Veuillez nous informer de toute
+            allergie alimentaire.
           </p>
         </div>
       </div>

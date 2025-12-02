@@ -1,0 +1,15 @@
+# Robots.txt pour Le Baobab Restaurant
+# https://lebaobab-saly.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://lebaobab-saly.com/sitemap.xml
+
+# Disallow certains répertoires (si nécessaire)
+# Disallow: /admin/
+# Disallow: /api/
+
+# Crawl-delay (optionnel)
+Crawl-delay: 1

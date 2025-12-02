@@ -127,35 +127,25 @@ const Home: React.FC = () => {
       <section
         ref={statsAnimation.elementRef}
         className={`py-16 bg-primary text-white transition-all duration-1000 ${
-          statsAnimation.isVisible
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 translate-y-10'
+          statsAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-5xl md:text-6xl font-bold text-accent mb-2">
-                {yearsCount}+
-              </div>
+              <div className="text-5xl md:text-6xl font-bold text-accent mb-2">{yearsCount}+</div>
               <div className="text-gray-300 text-sm md:text-base">Années d'excellence</div>
             </div>
             <div className="text-center">
-              <div className="text-5xl md:text-6xl font-bold text-accent mb-2">
-                {dishesCount}+
-              </div>
+              <div className="text-5xl md:text-6xl font-bold text-accent mb-2">{dishesCount}+</div>
               <div className="text-gray-300 text-sm md:text-base">Plats au menu</div>
             </div>
             <div className="text-center">
-              <div className="text-5xl md:text-6xl font-bold text-accent mb-2">
-                {chefCount}
-              </div>
+              <div className="text-5xl md:text-6xl font-bold text-accent mb-2">{chefCount}</div>
               <div className="text-gray-300 text-sm md:text-base">Chefs talentueux</div>
             </div>
             <div className="text-center">
-              <div className="text-5xl md:text-6xl font-bold text-accent mb-2">
-                {reviewsCount}+
-              </div>
+              <div className="text-5xl md:text-6xl font-bold text-accent mb-2">{reviewsCount}+</div>
               <div className="text-gray-300 text-sm md:text-base">Clients satisfaits</div>
             </div>
           </div>
@@ -163,10 +153,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Intro / Philosophy avec animation */}
-      <section
-        ref={philosophyAnimation.elementRef}
-        className="py-20 md:py-32 bg-secondary"
-      >
+      <section ref={philosophyAnimation.elementRef} className="py-20 md:py-32 bg-secondary">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div
@@ -178,7 +165,7 @@ const Home: React.FC = () => {
             >
               <div className="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-accent opacity-50 animate-pulse"></div>
               <img
-                src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?q=80&w=800&auto=format&fit=crop"
+                src="/images/home/philosophy/philosophie.jpg"
                 alt="Chef preparing food"
                 className="w-full h-[500px] object-cover rounded-sm shadow-2xl hover:scale-105 transition-transform duration-500"
               />
@@ -228,10 +215,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Specialties Highlight avec animation */}
-      <section
-        ref={specialtiesAnimation.elementRef}
-        className="py-24 bg-white"
-      >
+      <section ref={specialtiesAnimation.elementRef} className="py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div
             className={`text-center mb-16 transition-all duration-1000 ${
@@ -264,7 +248,8 @@ const Home: React.FC = () => {
                       alt={item.name}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       onError={(e) => {
-                        e.currentTarget.src = 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=800&auto=format&fit=crop';
+                        e.currentTarget.src =
+                          'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=800&auto=format&fit=crop';
                       }}
                       loading="lazy"
                     />
@@ -301,10 +286,7 @@ const Home: React.FC = () => {
               className="group inline-flex items-center space-x-2 text-primary hover:text-accent font-semibold border-b-2 border-accent pb-1 transition-colors"
             >
               <span>DÉCOUVRIR TOUTE LA CARTE</span>
-              <ArrowRight
-                className="group-hover:translate-x-2 transition-transform"
-                size={20}
-              />
+              <ArrowRight className="group-hover:translate-x-2 transition-transform" size={20} />
             </Link>
           </div>
         </div>

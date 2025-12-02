@@ -1,4 +1,5 @@
 # 🚀 ROADMAP PROFESSIONNELLE - LE BAOBAB
+
 ## Guide Complet de Transformation vers la Production
 
 > **Version:** 1.0
@@ -29,6 +30,7 @@
 ### 1.1 État Actuel du Projet
 
 **Ce qui fonctionne ✅**
+
 - Structure React avec routing de base
 - Design UI cohérent avec Tailwind
 - Pages principales (Home, Menu, Contact)
@@ -36,6 +38,7 @@
 - Responsive mobile/desktop
 
 **Ce qui manque ❌**
+
 - Configuration production-ready
 - Backend et API
 - Pages incomplètes (About, Gallery)
@@ -45,14 +48,14 @@
 
 ### 1.2 Objectifs de Transformation
 
-| Critère | Actuel | Cible |
-|---------|--------|-------|
-| Performance | Non optimisé | Lighthouse >90 |
-| SEO | Basique | Référencement complet |
-| Backend | Inexistant | API REST + DB |
-| Tests | 0% | Couverture >80% |
-| Sécurité | Faible | Standards OWASP |
-| Déploiement | Manuel | CI/CD automatisé |
+| Critère     | Actuel       | Cible                 |
+| ----------- | ------------ | --------------------- |
+| Performance | Non optimisé | Lighthouse >90        |
+| SEO         | Basique      | Référencement complet |
+| Backend     | Inexistant   | API REST + DB         |
+| Tests       | 0%           | Couverture >80%       |
+| Sécurité    | Faible       | Standards OWASP       |
+| Déploiement | Manuel       | CI/CD automatisé      |
 
 ### 1.3 Timeline Globale
 
@@ -118,6 +121,7 @@ gantt
 ### 2.2 Stack Technique Complète
 
 #### Frontend
+
 - **Framework:** React 19 + TypeScript 5.8
 - **Build Tool:** Vite 6.2
 - **Styling:** Tailwind CSS 3.x (local)
@@ -128,6 +132,7 @@ gantt
 - **Animations:** Framer Motion
 
 #### Backend
+
 - **Runtime:** Node.js 20 LTS
 - **Framework:** Express.js 4.x
 - **Language:** TypeScript
@@ -137,12 +142,14 @@ gantt
 - **Upload:** Multer + Cloudinary
 
 #### Database & Cache
+
 - **Primary DB:** PostgreSQL 16
 - **ORM:** Prisma
 - **Cache:** Redis
 - **Storage:** AWS S3 / Cloudinary
 
 #### DevOps & Testing
+
 - **Tests:** Vitest + React Testing Library
 - **E2E:** Playwright
 - **Linting:** ESLint + Prettier
@@ -154,6 +161,7 @@ gantt
 ---
 
 ## PHASE 1: FONDATIONS TECHNIQUES
+
 **Durée:** 7-10 jours | **Priorité:** CRITIQUE
 
 ### 1.1 Configuration Tailwind CSS Local
@@ -161,6 +169,7 @@ gantt
 **Objectif:** Supprimer la dépendance CDN et optimiser le bundle
 
 #### Étape 1.1.1: Installation
+
 ```bash
 # Dans le terminal
 npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
@@ -168,21 +177,22 @@ npx tailwindcss init -p
 ```
 
 #### Étape 1.1.2: Créer `tailwind.config.js`
+
 ```javascript
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
       colors: {
-        primary: '#0f172a',      // Deep Ocean Blue/Black
-        secondary: '#fff7ed',    // Sand Beige
-        accent: '#d97706',       // Amber/Gold
+        primary: '#0f172a', // Deep Ocean Blue/Black
+        secondary: '#fff7ed', // Sand Beige
+        accent: '#d97706', // Amber/Gold
         'ocean-light': '#e0f2fe',
       },
       fontFamily: {
@@ -195,21 +205,22 @@ export default {
       },
       keyframes: {
         fadeIn: {
-          'from': { opacity: '0', transform: 'translateY(20px)' },
-          'to': { opacity: '1', transform: 'translateY(0)' },
+          from: { opacity: '0', transform: 'translateY(20px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
         },
         slideUp: {
-          'from': { transform: 'translateY(100px)', opacity: '0' },
-          'to': { transform: 'translateY(0)', opacity: '1' },
+          from: { transform: 'translateY(100px)', opacity: '0' },
+          to: { transform: 'translateY(0)', opacity: '1' },
         },
       },
     },
   },
   plugins: [],
-}
+};
 ```
 
 #### Étape 1.1.3: Créer `src/index.css`
+
 ```css
 @tailwind base;
 @tailwind components;
@@ -235,19 +246,25 @@ export default {
 ```
 
 #### Étape 1.1.4: Modifier `index.html`
+
 **Supprimer:**
+
 ```html
 <!-- SUPPRIMER ces lignes -->
 <script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config = {...}</script>
+<script>
+  tailwind.config = {...}
+</script>
 ```
 
 **Garder uniquement:**
+
 ```html
-<link rel="stylesheet" href="/src/index.css">
+<link rel="stylesheet" href="/src/index.css" />
 ```
 
 #### Étape 1.1.5: Importer CSS dans `index.tsx`
+
 ```typescript
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -264,6 +281,7 @@ import App from './App';
 **Objectif:** URLs propres pour SEO (sans `#`)
 
 #### Étape 1.2.1: Modifier `App.tsx`
+
 ```typescript
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // ← Changer HashRouter
@@ -294,7 +312,9 @@ export default App;
 ```
 
 #### Étape 1.2.2: Configuration Vite pour SPA Routing
+
 **Modifier `vite.config.ts`:**
+
 ```typescript
 import path from 'path';
 import { defineConfig } from 'vite';
@@ -309,7 +329,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
-    }
+    },
   },
   build: {
     outDir: 'dist',
@@ -319,14 +339,15 @@ export default defineConfig({
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
           icons: ['lucide-react'],
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 });
 ```
 
 #### Étape 1.2.3: Créer `public/_redirects` (pour Netlify/Vercel)
+
 ```
 /*    /index.html   200
 ```
@@ -340,6 +361,7 @@ export default defineConfig({
 **Objectif:** Architecture scalable et maintenable
 
 #### Étape 1.3.1: Nouvelle Structure
+
 ```
 le-baobab/
 ├── public/
@@ -403,6 +425,7 @@ le-baobab/
 ```
 
 #### Étape 1.3.2: Migrer les fichiers
+
 ```bash
 # Créer les dossiers
 mkdir -p src/{components/{common,layout,features},hooks,contexts,services,utils,types,assets/{images,icons},styles}
@@ -415,6 +438,7 @@ mkdir -p tests/{unit,e2e}
 ```
 
 #### Étape 1.3.3: Mettre à jour les imports
+
 Après la migration, ajuster tous les imports dans les fichiers.
 
 ---
@@ -424,6 +448,7 @@ Après la migration, ajuster tous les imports dans les fichiers.
 **Objectif:** Code propre et cohérent
 
 #### Étape 1.4.1: Installation
+
 ```bash
 npm install -D eslint@latest \
   @typescript-eslint/eslint-plugin@latest \
@@ -437,6 +462,7 @@ npm install -D eslint@latest \
 ```
 
 #### Étape 1.4.2: Créer `.eslintrc.json`
+
 ```json
 {
   "root": true,
@@ -461,13 +487,7 @@ npm install -D eslint@latest \
       "jsx": true
     }
   },
-  "plugins": [
-    "@typescript-eslint",
-    "react",
-    "react-hooks",
-    "react-refresh",
-    "prettier"
-  ],
+  "plugins": ["@typescript-eslint", "react", "react-hooks", "react-refresh", "prettier"],
   "rules": {
     "react/prop-types": "off",
     "react-refresh/only-export-components": "warn",
@@ -490,6 +510,7 @@ npm install -D eslint@latest \
 ```
 
 #### Étape 1.4.3: Créer `.prettierrc`
+
 ```json
 {
   "semi": true,
@@ -504,6 +525,7 @@ npm install -D eslint@latest \
 ```
 
 #### Étape 1.4.4: Créer `.eslintignore`
+
 ```
 dist
 node_modules
@@ -513,6 +535,7 @@ node_modules
 ```
 
 #### Étape 1.4.5: Ajouter scripts dans `package.json`
+
 ```json
 {
   "scripts": {
@@ -536,6 +559,7 @@ node_modules
 **Objectif:** Typage robuste pour éviter les bugs
 
 #### Étape 1.5.1: Mettre à jour `tsconfig.json`
+
 ```json
 {
   "compilerOptions": {
@@ -578,6 +602,7 @@ node_modules
 ```
 
 #### Étape 1.5.2: Corriger les erreurs TypeScript
+
 Après activation du mode strict, corriger toutes les erreurs de type.
 
 **✅ Validation:** `npm run build` sans erreurs TypeScript
@@ -589,6 +614,7 @@ Après activation du mode strict, corriger toutes les erreurs de type.
 **Objectif:** Versionning propre
 
 #### Étape 1.6.1: Créer/Mettre à jour `.gitignore`
+
 ```gitignore
 # Dependencies
 node_modules/
@@ -642,6 +668,7 @@ coverage/
 ```
 
 #### Étape 1.6.2: Initialiser Git (si pas déjà fait)
+
 ```bash
 git init
 git add .
@@ -655,12 +682,14 @@ git commit -m "chore: initial commit - Phase 1 foundations"
 **Objectif:** Qualité de code automatique
 
 #### Étape 1.7.1: Installation
+
 ```bash
 npm install -D husky@latest lint-staged@latest
 npx husky init
 ```
 
 #### Étape 1.7.2: Créer `.husky/pre-commit`
+
 ```bash
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
@@ -669,16 +698,12 @@ npx lint-staged
 ```
 
 #### Étape 1.7.3: Configuration dans `package.json`
+
 ```json
 {
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{css,md,json}": [
-      "prettier --write"
-    ]
+    "*.{ts,tsx}": ["eslint --fix", "prettier --write"],
+    "*.{css,md,json}": ["prettier --write"]
   }
 }
 ```
@@ -692,6 +717,7 @@ npx lint-staged
 **Objectif:** Projet mono-technologie
 
 #### Étape 1.8.1: Supprimer `.venv`
+
 ```bash
 # Windows
 rmdir /s /q .venv
@@ -701,7 +727,9 @@ rm -rf .venv
 ```
 
 #### Étape 1.8.2: Supprimer références dans vite.config.ts
+
 **Avant:**
+
 ```typescript
 define: {
   'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
@@ -732,6 +760,7 @@ define: {
 ---
 
 ## PHASE 2: DÉVELOPPEMENT BACKEND
+
 **Durée:** 12-15 jours | **Priorité:** HAUTE
 
 ### 2.1 Architecture Backend
@@ -772,6 +801,7 @@ backend/
 ### 2.2 Initialisation Backend
 
 #### Étape 2.2.1: Créer le dossier backend
+
 ```bash
 mkdir backend
 cd backend
@@ -779,6 +809,7 @@ npm init -y
 ```
 
 #### Étape 2.2.2: Installation dépendances
+
 ```bash
 npm install express@latest \
   cors@latest \
@@ -804,7 +835,9 @@ npm install -D @types/express@latest \
 ```
 
 #### Étape 2.2.3: Configuration TypeScript Backend
+
 **Créer `backend/tsconfig.json`:**
+
 ```json
 {
   "compilerOptions": {
@@ -826,6 +859,7 @@ npm install -D @types/express@latest \
 ```
 
 #### Étape 2.2.4: Scripts package.json
+
 ```json
 {
   "scripts": {
@@ -844,13 +878,16 @@ npm install -D @types/express@latest \
 ### 2.3 Configuration Base de Données (Prisma + PostgreSQL)
 
 #### Étape 2.3.1: Initialiser Prisma
+
 ```bash
 cd backend
 npx prisma init
 ```
 
 #### Étape 2.3.2: Schéma Prisma
+
 **Créer `backend/prisma/schema.prisma`:**
+
 ```prisma
 generator client {
   provider = "prisma-client-js"
@@ -919,7 +956,9 @@ enum UserRole {
 ```
 
 #### Étape 2.3.3: Variables d'environnement
+
 **Créer `backend/.env`:**
+
 ```env
 # Database
 DATABASE_URL="postgresql://user:password@localhost:5432/lebaobab?schema=public"
@@ -945,6 +984,7 @@ RATE_LIMIT_MAX_REQUESTS=100
 ```
 
 #### Étape 2.3.4: Migration initiale
+
 ```bash
 npx prisma migrate dev --name init
 npx prisma generate
@@ -955,6 +995,7 @@ npx prisma generate
 ### 2.4 Serveur Express
 
 #### Étape 2.4.1: Créer `backend/src/server.ts`
+
 ```typescript
 import express, { Application } from 'express';
 import cors from 'cors';
@@ -971,10 +1012,12 @@ const PORT = process.env.PORT || 5000;
 
 // Security Middleware
 app.use(helmet());
-app.use(cors({
-  origin: process.env.ALLOWED_ORIGINS?.split(',') || 'http://localhost:3000',
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: process.env.ALLOWED_ORIGINS?.split(',') || 'http://localhost:3000',
+    credentials: true,
+  })
+);
 
 // Rate Limiting
 const limiter = rateLimit({
@@ -1010,7 +1053,9 @@ app.listen(PORT, () => {
 ### 2.5 Services & Controllers
 
 #### Étape 2.5.1: Service Email
+
 **Créer `backend/src/services/email.service.ts`:**
+
 ```typescript
 import nodemailer from 'nodemailer';
 import { Reservation } from '@prisma/client';
@@ -1068,12 +1113,17 @@ export async function sendReservationNotificationToRestaurant(reservation: Reser
 ```
 
 #### Étape 2.5.2: Controller Réservation
+
 **Créer `backend/src/controllers/reservation.controller.ts`:**
+
 ```typescript
 import { Request, Response, NextFunction } from 'express';
 import { PrismaClient } from '@prisma/client';
 import { z } from 'zod';
-import { sendReservationConfirmation, sendReservationNotificationToRestaurant } from '../services/email.service';
+import {
+  sendReservationConfirmation,
+  sendReservationNotificationToRestaurant,
+} from '../services/email.service';
 
 const prisma = new PrismaClient();
 
@@ -1144,7 +1194,9 @@ export async function getReservations(req: Request, res: Response, next: NextFun
 ```
 
 #### Étape 2.5.3: Routes
+
 **Créer `backend/src/routes/reservation.routes.ts`:**
+
 ```typescript
 import { Router } from 'express';
 import { createReservation, getReservations } from '../controllers/reservation.controller';
@@ -1158,6 +1210,7 @@ export default router;
 ```
 
 **Créer `backend/src/routes/index.ts`:**
+
 ```typescript
 import { Router } from 'express';
 import reservationRoutes from './reservation.routes';
@@ -1174,6 +1227,7 @@ export default router;
 ### 2.6 Middleware Error Handler
 
 **Créer `backend/src/middleware/errorHandler.ts`:**
+
 ```typescript
 import { Request, Response, NextFunction } from 'express';
 
@@ -1185,9 +1239,7 @@ export function errorHandler(err: Error, req: Request, res: Response, next: Next
   }
 
   res.status(500).json({
-    error: process.env.NODE_ENV === 'production'
-      ? 'Une erreur est survenue'
-      : err.message,
+    error: process.env.NODE_ENV === 'production' ? 'Une erreur est survenue' : err.message,
     ...(process.env.NODE_ENV === 'development' && { stack: err.stack }),
   });
 }
@@ -1198,6 +1250,7 @@ export function errorHandler(err: Error, req: Request, res: Response, next: Next
 ### 2.7 Docker Compose (Dev Environment)
 
 **Créer `docker-compose.yml` à la racine:**
+
 ```yaml
 version: '3.8'
 
@@ -1227,6 +1280,7 @@ volumes:
 ```
 
 **Démarrer:**
+
 ```bash
 docker-compose up -d
 ```
@@ -1236,6 +1290,7 @@ docker-compose up -d
 ### 2.8 Intégration Frontend → Backend
 
 #### Étape 2.8.1: Créer `src/services/api.ts`
+
 ```typescript
 import axios from 'axios';
 
@@ -1266,6 +1321,7 @@ export default api;
 ```
 
 #### Étape 2.8.2: Mettre à jour `Contact.tsx`
+
 ```typescript
 import React, { useState } from 'react';
 import { createReservation } from '../services/api';
@@ -1304,12 +1360,15 @@ const Contact: React.FC = () => {
 ```
 
 #### Étape 2.8.3: Variables d'environnement Frontend
+
 **Créer `.env.local` (frontend):**
+
 ```env
 VITE_API_URL=http://localhost:5000/api
 ```
 
 **Créer `.env.example`:**
+
 ```env
 VITE_API_URL=https://api.lebaobab.com/api
 ```
@@ -1334,12 +1393,15 @@ VITE_API_URL=https://api.lebaobab.com/api
 ---
 
 ## PHASE 3: OPTIMISATION & PRODUCTION
+
 **Durée:** 8-10 jours | **Priorité:** HAUTE
 
 ### 3.1 Implémentation Pages Manquantes
 
 #### Étape 3.1.1: Page About.tsx
+
 **Créer `src/pages/About.tsx`:**
+
 ```typescript
 import React from 'react';
 import { Award, Heart, Users, Clock } from 'lucide-react';
@@ -1466,7 +1528,9 @@ export default About;
 ```
 
 #### Étape 3.1.2: Page Gallery.tsx
+
 **Créer `src/pages/Gallery.tsx`:**
+
 ```typescript
 import React, { useState } from 'react';
 import { GALLERY_IMAGES } from '../utils/constants';
@@ -1564,12 +1628,15 @@ export default Gallery;
 ### 3.2 SEO & Meta Tags
 
 #### Étape 3.2.1: Installation React Helmet
+
 ```bash
 npm install react-helmet-async
 ```
 
 #### Étape 3.2.2: Wrapper App avec HelmetProvider
+
 **Modifier `src/main.tsx`:**
+
 ```typescript
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -1593,7 +1660,9 @@ root.render(
 ```
 
 #### Étape 3.2.3: Créer composant SEO
+
 **Créer `src/components/common/SEO.tsx`:**
+
 ```typescript
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
@@ -1642,6 +1711,7 @@ export default SEO;
 ```
 
 #### Étape 3.2.4: Utiliser SEO dans les pages
+
 ```typescript
 // Exemple dans Home.tsx
 import SEO from '@/components/common/SEO';
@@ -1664,12 +1734,15 @@ const Home: React.FC = () => {
 ### 3.3 Optimisation Images
 
 #### Étape 3.3.1: Installation
+
 ```bash
 npm install vite-plugin-image-optimizer
 ```
 
 #### Étape 3.3.2: Configuration Vite
+
 **Modifier `vite.config.ts`:**
+
 ```typescript
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
@@ -1693,12 +1766,15 @@ export default defineConfig({
 ### 3.4 Tests
 
 #### Étape 3.4.1: Installation
+
 ```bash
 npm install -D vitest @testing-library/react @testing-library/jest-dom @testing-library/user-event jsdom
 ```
 
 #### Étape 3.4.2: Configuration Vitest
+
 **Créer `vitest.config.ts`:**
+
 ```typescript
 import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
@@ -1720,13 +1796,17 @@ export default defineConfig({
 ```
 
 #### Étape 3.4.3: Setup Tests
+
 **Créer `tests/setup.ts`:**
+
 ```typescript
 import '@testing-library/jest-dom';
 ```
 
 #### Étape 3.4.4: Exemple de test
+
 **Créer `tests/unit/components/Button.test.tsx`:**
+
 ```typescript
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
@@ -1740,6 +1820,7 @@ describe('Button Component', () => {
 ```
 
 #### Étape 3.4.5: Scripts package.json
+
 ```json
 {
   "scripts": {
@@ -1755,7 +1836,9 @@ describe('Button Component', () => {
 ### 3.5 Performance & Bundle Optimization
 
 #### Étape 3.5.1: Lazy Loading Routes
+
 **Modifier `App.tsx`:**
+
 ```typescript
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -1801,7 +1884,9 @@ export default App;
 ### 3.6 Fichiers Production
 
 #### Étape 3.6.1: robots.txt
+
 **Créer `public/robots.txt`:**
+
 ```
 User-agent: *
 Allow: /
@@ -1810,7 +1895,9 @@ Sitemap: https://lebaobab.com/sitemap.xml
 ```
 
 #### Étape 3.6.2: sitemap.xml
+
 **Créer `public/sitemap.xml`:**
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -1861,11 +1948,13 @@ Sitemap: https://lebaobab.com/sitemap.xml
 ---
 
 ## PHASE 4: FEATURES AVANCÉES
+
 **Durée:** 15-20 jours | **Priorité:** MOYENNE
 
 ### 4.1 Panel Administration
 
 **Technologies:**
+
 - React Admin ou custom dashboard
 - Authentication JWT
 - CRUD complet réservations
@@ -1873,6 +1962,7 @@ Sitemap: https://lebaobab.com/sitemap.xml
 ### 4.2 Paiement en Ligne
 
 **Intégrations possibles:**
+
 - Stripe
 - Wave (Sénégal)
 - Orange Money API
@@ -1920,6 +2010,7 @@ type MenuItem = {};
 Format: `type(scope): message`
 
 **Types:**
+
 - `feat`: Nouvelle fonctionnalité
 - `fix`: Correction bug
 - `docs`: Documentation
@@ -1929,6 +2020,7 @@ Format: `type(scope): message`
 - `chore`: Tâches maintenance
 
 **Exemples:**
+
 ```
 feat(reservation): add email confirmation
 fix(menu): correct price display
@@ -1950,6 +2042,7 @@ vercel --prod
 ```
 
 **Configuration `vercel.json`:**
+
 ```json
 {
   "buildCommand": "npm run build",
@@ -1962,6 +2055,7 @@ vercel --prod
 ### Backend (Railway/Render)
 
 **Dockerfile:**
+
 ```dockerfile
 FROM node:20-alpine
 WORKDIR /app
@@ -2006,6 +2100,7 @@ const logger = winston.createLogger({
 ### ✅ Avant Production
 
 **Technique:**
+
 - [ ] Build sans erreurs
 - [ ] Tests passent (>80% coverage)
 - [ ] Lighthouse >90 (Performance, SEO, Accessibility)
@@ -2015,6 +2110,7 @@ const logger = winston.createLogger({
 - [ ] CORS configuré correctement
 
 **Fonctionnel:**
+
 - [ ] Formulaires validés
 - [ ] Emails envoyés
 - [ ] Réservations enregistrées DB
@@ -2022,12 +2118,14 @@ const logger = winston.createLogger({
 - [ ] Responsive mobile/tablette/desktop
 
 **Sécurité:**
+
 - [ ] Rate limiting actif
 - [ ] Validation inputs (backend)
 - [ ] Pas d'injection SQL
 - [ ] Headers sécurisés (Helmet)
 
 **Contenu:**
+
 - [ ] Images optimisées
 - [ ] Textes sans fautes
 - [ ] Liens fonctionnels
@@ -2039,12 +2137,14 @@ const logger = winston.createLogger({
 ## 📞 CONTACTS & RESSOURCES
 
 **Documentation:**
+
 - React: https://react.dev
 - TypeScript: https://typescriptlang.org
 - Prisma: https://prisma.io
 - Tailwind: https://tailwindcss.com
 
 **Support:**
+
 - GitHub Issues: Pour tracker les bugs
 - Stack Overflow: Questions techniques
 
@@ -2055,6 +2155,7 @@ const logger = winston.createLogger({
 Ce document est votre référence pour transformer Le Baobab en solution professionnelle.
 
 **Prochaines étapes:**
+
 1. Valider Phase 1 complètement
 2. Attaquer Phase 2 (Backend)
 3. Optimiser Phase 3

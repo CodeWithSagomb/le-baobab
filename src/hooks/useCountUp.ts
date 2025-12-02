@@ -7,7 +7,12 @@ interface UseCountUpOptions {
   isActive?: boolean;
 }
 
-export const useCountUp = ({ end, duration = 2000, start = 0, isActive = true }: UseCountUpOptions) => {
+export const useCountUp = ({
+  end,
+  duration = 2000,
+  start = 0,
+  isActive = true,
+}: UseCountUpOptions) => {
   const [count, setCount] = useState(start);
 
   useEffect(() => {
